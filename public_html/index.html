@@ -12,11 +12,10 @@
             <h3>Welcome to Rock, Paper, Scissors</h3>
             <div class="container" style="width: 40%;">
                 <center>
-                    <table class="table table-bordered" style="border-width:2px;border-style: solid;">
+                    <table class="table table-bordered"  id="t2" style="border-width:2px;border-style: solid;">
                         <tbody>                    
                             <tr>
                                 <td>Computer</td>
-
                             </tr>
                             <tr>
                                 <td style="height: 120px;">
@@ -37,11 +36,15 @@
                             </tr>
                         </tbody>
                     </table>
-                    <a href="#" name="myEle"><img src="img/rock.png" alt="Rock"></a>
-                    <a href="#" name="myEle"><img src="img/paper.png" alt="Paper"></a>
-                    <a href="#" name="myEle"><img src="img/scissors.png" alt="Scissors"></a>
+                    <div id="play" style="display: none;">
+                        <p id="result">New Game! Click on the weapon to choose.<br><br></p>
+                        <a href="#" name="myEle"><img src="img/rock.png" alt="Rock"></a>
+                        <a href="#" name="myEle"><img src="img/paper.png" alt="Paper"></a>
+                        <a href="#" name="myEle"><img src="img/scissors.png" alt="Scissors"></a>
+                    </div>
+                    <button class="btn btn-primary" onclick="play.style.display = 'block';this.style.display = 'none';">PLAY</button>
+
                 </center>
-                <p id="result">New Game! Click on the weapon to choose.<br><br></p>
             </div>
         </div>
         <script src="js/jquery.min.js"></script>

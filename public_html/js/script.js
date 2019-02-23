@@ -1,4 +1,5 @@
 var score = 0;
+var games = 0;
 var userChoice;
 
 var values = {
@@ -39,14 +40,12 @@ var chooseWinner = function (c, u) {
     var text = "";
     if (c === u) {
         text = "Its a DRAW! Try Again?";
-    }
-  else if(order[computerChoice + 1] === order[userChoice]) {
+    } else if (order[c + 1] === order[u]) {
         score++;
-        text = "Congratulations!! You won! ";
-    } 
-    else {
+        text = "<b>Congratulations!! You won! </b>";
+    } else {
         score--;
-        text = "You lost!";
+        text = "<b>You lost!</b>";
     }
     return text;
 };
@@ -64,11 +63,25 @@ function assignClick(position) {
     var res = document.getElementById("result");
     res.innerHTML = "<p>" + computer.computerText + "<br>";
     res.innerHTML += chooseWinner(computer.computerChoice, userChoice);
-    res.innerHTML += "<br>" + "SCORE: " + score + "</p>";
+    res.innerHTML += "<br>"+"</p>";
+    
+    games++;
+    
     var x = document.getElementById("b" + userChoice);
     x.style.display = "block";
     x = document.getElementById("a" + computer.computerChoice);
     x.style.display = "block";
+    
+    if(games===3)
+    {
+        alert("TOTAL SCORE AFTER 3 GAMES : "+ score);
+        var x = prompt("Do you want to play again??");
+        if(x === "yes" || x==="Yes" || x==="YES")
+        {
+            games = 0 ;
+            location.reload();
+        }
+    }
 }
 ;
 allItems.init();
