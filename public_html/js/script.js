@@ -5,10 +5,12 @@ var userChoice;
 var values = {
     "0": "Rock",
     "1": "Paper",
-    "2": "Scissors"
+    "2": "Scissors",
+    "3": "Spoke",
+    "4": "Lizard"
 };
 
-order = [0, 1, 2, 0];
+order = [0,1,2,3,4,0];
 
 var allItems = {
     items: document.getElementsByName('myEle'),
@@ -29,7 +31,7 @@ function randIntInRange(min, max) {
 
 var computer = {
     init: function () {
-        this.computerChoice = randIntInRange(0, 2);
+        this.computerChoice = randIntInRange(0,4);
         this.computerText = "The computer chose : " + values[this.computerChoice];
     },
     computerChoice: 0,
@@ -38,7 +40,7 @@ var computer = {
 
 var chooseWinner = function (c, u) {
     var text = "";
-    if (c === u) {
+    if (c == u) {
         text = "Its a DRAW! Try Again?";
     } else if (order[c + 1] === order[u]) {
         score++;
@@ -51,7 +53,7 @@ var chooseWinner = function (c, u) {
 };
 
 function assignClick(position) {
-    for (var i = 0; i < 3; i++)
+    for (var i = 0; i < 5; i++)
     {
         var ele = document.getElementById("a" + i);
         ele.style.display = "none";
