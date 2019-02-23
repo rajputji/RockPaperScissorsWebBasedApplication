@@ -1,0 +1,21 @@
+*
+{
+    text-align: center;
+}
+
+
+img {
+  margin: 10px 5px;
+  padding: 15px;
+  border-radius: 100px;
+  height: 100px;
+  width: 100px;
+  transition: all 0s ease-in-out;
+  -webkit-transition: all 0s ease-in-out;
+  -moz-trasition: all 0s ease-in-out;
+  -o-transition: all 0s ease-in-out;
+}
+
+img:hover {
+  transform: scale(1.5);
+}
